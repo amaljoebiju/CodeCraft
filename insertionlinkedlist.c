@@ -1,12 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 struct Node {
     int data;
     struct Node* next;
 };
-
 
 struct Node* createNode(int value) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
@@ -28,6 +26,10 @@ void insertEnd(struct Node** head, int value) {
     temp->next = newNode;
 }
 
+// 🔹 Function to add roll number 7
+void addRoll7(struct Node** head) {
+    insertEnd(head, 7);
+}
 
 void displayList(struct Node* head) {
     printf("Roll Numbers in Linked List: ");
@@ -45,19 +47,14 @@ void displayList(struct Node* head) {
 int main() {
     struct Node* head = NULL;
 
-
     insertEnd(&head, 42);
-
-
     insertEnd(&head, 14);
     insertEnd(&head, 13);
-    insertEnd(&head, 30);
 
+    // ✅ Now add roll number 7 using special function
+    addRoll7(&head);
 
     displayList(head);
 
     return 0;
 }
-
-
-
